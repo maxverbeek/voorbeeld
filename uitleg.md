@@ -42,7 +42,7 @@ Een voorbeeld van een pagina met PHP
 PHP code 'doet' dingen, en HTML code is een andere manier om dingen te laten zien.
 De reset van deze pagina gaat over hoe je dingen met PHP code kunt doen.
 
-##Soorten Variabelen
+##Variabelen
 Om te beginnen met PHP wil ik het over variabelen gaan hebben. Een variabele is een
 tijdelijke opslag voor een stukje data. Dit kan een stukje tekst zijn, een getal,
 of zelfs een lijst met andere variabelen.
@@ -123,7 +123,7 @@ Om gegevens uit een multidimentional array te halen doe je het volgende:
 $ding21 = $lijst['anderelijst2']['key2.2']
 ```
 
-##Booleans
+###Booleans
 
 Een Boolean betekend `true` of `false`. Je kan een boolean maken net als
 alle andere variabelen:
@@ -132,7 +132,7 @@ alle andere variabelen:
 $boolean = true;
 ```
 
-###Comparison Operators
+####Comparison Operators
 
 Met booleans is echter iets speciaals aan de hand. Een boolean is namelijk de
 uitkomst van een vergelijking van twee dingen (true: klopt wel, false: klopt niet)
@@ -149,3 +149,37 @@ Operator|Betekenis
 <=		|Kleiner dan of gelijk aan
 >		|Groter dan
 >=		|Groter dan of gelijk aan
+
+
+#####Het verschil tussen `==` en `===`
+Stel we hebben de volgende situatie:
+
+```php
+$variabele = '1'; // geen getal, dit is tekst
+
+$variabele == 1; // true
+// ze zijn beide 1, alleen is de een tekst, en de andere een getal
+
+$variabele === 1; // false
+// false omdat ze niet PRECIES gelijk zijn.
+```
+
+De Comparison Operators met 3 tekens kijken dus ook of het type van de variabele
+(boolean, integer, string, array, etc..) hetzelfde is, waar de operators met 2
+tekens dit niet doen.
+
+LET OP: `true == 1` `false == 0`
+Voor true kun je ook 1 gebruiken en voor false 0, alleen zal dit niet exact gelijk zijn
+
+####Logic Operators
+Wat kunnen we dan nog meer met Booleans? Nou best wel veel. Je kan de infrastructuur
+van je applicatie hiermee controleren. Je kan namelijk ook booleans met
+elkaar vergelijken. Hieronder staan de drie meestgebruikte Logic Operators
+
+Operator|Voorbeeld|Betekenis
+--------|---------|---------
+\|\|	|$a \|\| $b|Geeft true als $a true is, en als $b true is
+&&      |$a && $b|Geeft true als $a en $b alletwee true zijn
+!       |! $a|Geeft true als $a false is (maakt van true false, en van false true)
+
+Het nut van deze Logic Operators komt goed naarvoren bij de paragraaf over If's
