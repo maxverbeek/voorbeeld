@@ -117,3 +117,35 @@ $lijst = array(
 ```
 
 Je kan oneindig veel niveaus diep gaan.
+Om gegevens uit een multidimentional array te halen doe je het volgende:
+```php
+// let op: je kan deze variabele niet $ding2.1 noemen, want een . is een speciaal teken
+$ding21 = $lijst['anderelijst2']['key2.2']
+```
+
+##Booleans
+
+Een Boolean betekend `true` of `false`. Je kan een boolean maken net als
+alle andere variabelen:
+
+```php
+$boolean = true;
+```
+
+###Comparison Operators
+
+Met booleans is echter iets speciaals aan de hand. Een boolean is namelijk de
+uitkomst van een vergelijking van twee dingen (true: klopt wel, false: klopt niet)
+
+In PHP doen we vergelijkingen met Comparison Operators:
+
+Operator|Betekenis
+--------|---------------------------
+==		|Komt overeen met
+===		|Is exact gelijk aan
+!=		|Komt niet overeen met
+!==		|Is niet exact gelijk aan
+<		|Kleiner dan
+<=		|Kleiner dan of gelijk aan
+>		|Groter dan
+>=		|Groter dan of gelijk aan
