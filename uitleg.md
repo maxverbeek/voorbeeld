@@ -68,3 +68,52 @@ Dit kan (bijna) alles zijn. Hier zijn een paar voorwaarden voor:
 * Een variabele mag niet met een getal beginnen (getallen mogen er wel in voorkomen).
 * Een variabele mag geen witruimte of speciale tekens bevatten (met uitzondering van de _)
 
+###Arrays
+Een array is een lijst met een meerdere variabelen. Het is heel praktisch om
+gegevens te groepperen. Je maakt een array doormiddel van de array() functie.
+
+```php
+$lijst = array(
+	'ding1', 'ding2', 3, 'ding4'
+);
+```
+
+Je mag zo veel dingen als je maar wilt in een array stoppen.
+Je zal jezelf nu wel afvragen, hoe kan ik dan bij die dingen als $lijst alle
+dingen tegelijk zijn?
+
+Bij een array gebruiken we 'keys'. Elk item in een array heeft een key (een index)
+PHP arrays zijn zero-indexed. Dit betekend dat het 1e item in een array, de key 0 heeft (integer)
+
+om bij `'ding1'` te komen, kunnen we dus `$lijst[0]` doen.
+
+####Associative Arrays
+Je kan bij arrays ook zelf bepalen wat de key word.
+```php
+
+$lijst = array(
+	'key1' => 'ding1',
+	'key2' => 'ding2'
+);
+```
+
+Dit wordt een associative array genoemd.
+
+####Mutlidimentional arrays
+Je kan ook een array in een array stoppen. Dit heet een mutlidimentional array.
+
+```php
+$lijst = array(
+	'anderelijst1' => array(
+		'key1.1' => 'ding1.1',
+		'key1.2' => 'ding1.2'
+	),
+
+	'anderelijst2' => array(
+		'key2.1' => 'ding2.1',
+		'key2.2' => 'ding2.2'
+	)
+);
+```
+
+Je kan oneindig veel niveaus diep gaan.
