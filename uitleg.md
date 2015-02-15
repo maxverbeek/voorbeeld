@@ -47,10 +47,11 @@ Om te beginnen met PHP wil ik het over variabelen gaan hebben. Een variabele is 
 tijdelijke opslag voor een stukje data. Dit kan een stukje tekst zijn, een getal,
 of zelfs een lijst met andere variabelen.
 
-Er zijn 5 soorten variabelen in PHP:
+Er zijn 6 soorten variabelen in PHP:
 
 * string (tekst)
-* integer (getal)
+* integer (heel getal)
+* float (decimaal getal)
 * boolean (ja of nee)
 * array (lijst met andere variabelen)
 * object (een lijst, maar ook met functies, Hoef je je nog geen zorgen over te maken)
@@ -99,8 +100,8 @@ $lijst = array(
 
 Dit wordt een associative array genoemd.
 
-####Mutlidimentional arrays
-Je kan ook een array in een array stoppen. Dit heet een mutlidimentional array.
+####Mutlidimensional arrays
+Je kan ook een array in een array stoppen. Dit heet een mutlidimensional array.
 
 ```php
 $lijst = array(
@@ -117,7 +118,7 @@ $lijst = array(
 ```
 
 Je kan oneindig veel niveaus diep gaan.
-Om gegevens uit een multidimentional array te halen doe je het volgende:
+Om gegevens uit een multidimensional array te halen doe je het volgende:
 ```php
 // let op: je kan deze variabele niet $ding2.1 noemen, want een . is een speciaal teken
 $ding21 = $lijst['anderelijst2']['key2.2']
@@ -182,4 +183,82 @@ Operator|Voorbeeld|Betekenis
 &&      |$a && $b|Geeft true als $a en $b alletwee true zijn
 !       |! $a|Geeft true als $a false is (maakt van true false, en van false true)
 
-Het nut van deze Logic Operators komt goed naarvoren bij de paragraaf over If's
+Deze Logic Operators worden gebruikt om meerdere booleans samen te voegen tot één
+boolean. Bijvoorbeeld als je op een abstracte manier de werking
+van een mens wilt beschrijven:
+
+```php
+$slaapt = true;
+$nietWakker = ! $slaapt; // false
+
+$ruiktEten = true;
+$tijd = 7.30; // half 8
+
+// iemand wordt wakker als hij slaapt, eten ruikt en als het later is dan 7 uur
+$wordtWakker = $ruiktEten && $nietWakker && $tijd > 7.00; // true
+
+$heeftHonger = true;
+
+$wordtWakkerMetHonger = $wordtWakker && $heeftHonger; // true
+```
+
+Het nut van deze Logic Operators komt goed naar voren bij de paragraaf over If's
+
+##If statements
+
+Een if statement is een manier om aan de hand van een paar controles (Comparison Operators)
+een blok code wel of niet uit te voeren. Het skelet van een if statement ziet er zo uit:
+
+```php
+if (boolean)
+{
+	code als boolean true is
+}
+```
+
+Om maar even een voorbeeldje te laten zien:
+
+```php
+$name = 'Max';
+
+if ($name == 'Max')
+{
+	echo "Jij bent Max!";
+}
+```
+
+###Else
+Als je ook wilt beschrijven wat er moet gebeuren als die boolean niet true is
+kun je een else statement gebruiken.
+
+```php
+if ($name == 'Max')
+{
+	echo "Jij bent Max!";
+}
+
+else
+{
+	echo "Jij bent niet Max!";
+}
+```
+
+###Elseif
+Als je door wilt gaan met controleren na je if, kun je ook nog een elseif statement toevoegen
+
+```php
+if ($name == 'Max')
+{
+	echo "Jij bent Max!";
+}
+
+elseif ($name == 'Sibren')
+{
+	echo "Jij bent Sibren!";
+}
+
+else
+{
+	echo "Jij bent niet Max en ook niet Sibren!";
+}
+```
